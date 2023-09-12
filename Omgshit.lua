@@ -197,7 +197,7 @@ Simple.BackgroundTransparency = 1
 Simple.Position = UDim2.new(0, 5, 0, 0)
 Simple.Size = UDim2.new(0, 57, 0, 18)
 Simple.Font = Enum.Font.SourceSansBold
-Simple.Text = "RemoteSpy | I Love You ❤️🥶🗣️"
+Simple.Text = "Silent Source Snatcher V1 | I LOVE YOU!🗣️🔥"
 Simple.TextColor3 = Color3.new(1, 1, 1)
 Simple.TextSize = 14
 Simple.TextXAlignment = Enum.TextXAlignment.Left
@@ -1238,7 +1238,7 @@ function newRemote(type, name, args, remote, function_info, blocked, src, return
 	schedule(function()
 		log.GenScript = genScript(remote, args)
 		if blocked then
-			logs[#logs].GenScript = "-- THIS REMOTE WAS PREVENTED FROM FIRING THE SERVER BY REMOTESPY\n\n"
+			logs[#logs].GenScript = "-- THIS REMOTE WAS PREVENTED FROM FIRING THE SERVER BY SILENT SOURCE SNATCHER\n\n"
 				.. logs[#logs].GenScript
 		end
 	end)
@@ -1295,7 +1295,7 @@ function genScript(remote, args)
 			end
 		end
 		if not remote:IsDescendantOf(game) and not getnilrequired then
-			gen = "function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end\n\n"
+			gen = "function getNil(name,class)\n for _,v in pairs(getnilinstances())\n       do if v.ClassName == class and v.Name == name then \n            return v;\n         end\n    end\nend\n\n"
 				.. gen
 		end
 		if remote:IsA("RemoteEvent") then
@@ -1383,7 +1383,7 @@ function v2v(t)
 		count = count + 1
 	end
 	if getnilrequired then
-		topstr = "function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end\n"
+		topstr = "function getNil(name,class)\n for _,v in pairs(getnilinstances())\n       do if v.ClassName == class and v.Name == name then \n            return v;\n         end\n    end\nend\n"
 			.. topstr
 	end
 	if #topstr > 0 then
